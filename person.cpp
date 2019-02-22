@@ -6,8 +6,8 @@ using namespace std;
 Person::Person(){
   payRate = 0.0;
   hoursWorked = 0.0;
-  firstName = " ";
-  lastName = " ";
+  firstName = "No";
+  lastName = "employee";
 }
 
 void Person::setFirstName(string fName){
