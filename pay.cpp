@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -15,16 +16,15 @@ void readData(string fileName, Person arr[], size_t size){
   string space;
 
   for(int i = 0; i < size; ++i){
+    myFile >> fName_ >> lName_;
+    arr[i].setFirstName(fName_);
+    arr[i].setLastName(lName_);
+    myFile >> pay_ >> hours_;
+    arr[i].setPayRate(pay_);
+    arr[i].setHoursWorked(hours_);
+    getline(myFile, space);
     if( i > 1 && arr[i].getFirstName() == arr[i-1].getFirstName()){
       i = size;
-    }else{
-      myFile >> fName_ >> lName_;
-      arr[i].setFirstName(fName_);
-      arr[i].setLastName(lName_);
-      myFile >> pay_ >> hours_;
-      arr[i].setPayRate(pay_);
-      arr[i].setHoursWorked(hours_);
-      getline(myFile, space);
     }
   }
 myFile.close();
@@ -37,6 +37,7 @@ void writeData(string fileName, Person arr[], size_t size){
     if(arr[i].fullName() == "No employee" && arr[i].totalPay() == 0){
       i = size;
     }else{
+      cout << fixed << showpoint << setprecision(2);
       myFile << arr[i].fullName() << " " << arr[i].totalPay() << endl;
     }
   }
@@ -59,6 +60,10 @@ int main(){
   cout << endl;
   writeData(output_, employees, size);
   cout << "Done..." << endl;
+
+  for(int i = 0; i < size; ++i){
+    cout << employees[i].fullName() << " " << employees[i].totalPay() << endl;
+  }
 
   return 0;
 }
