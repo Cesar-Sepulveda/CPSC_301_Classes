@@ -3,6 +3,17 @@
 
 using namespace std;
 
+Person::Person(){
+  payRate = 0.0;
+  hoursWorked = 0.0;
+  firstName = " ";
+  lastName = " ";
+}
+
+void Person::setFirstName(string fName){
+  firstName = fName;
+}
+
 string Person::getFirstName() {
     return firstName;
 }
@@ -13,10 +24,6 @@ void Person::setLastName(string lName){
 
 string Person::getLastName() {
     return lastName;
-}
-
-void Person::setFirstName(string fName){
-  firstName = fName;
 }
 
 void Person::setPayRate(float rate){
