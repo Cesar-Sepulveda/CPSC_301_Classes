@@ -17,7 +17,7 @@ void readData(string fileName, Person arr[], size_t size){
 
   for(int i = 0; i < size; ++i){
       myFile >> fName_ >> lName_;
-      if(i >= 1 && arr[i-1].getFirstName() == fName_){
+      if(i >= 1 && arr[i-1].getFirstName() == fName_ && arr[i-1].getLastName() == lName_){
         i = size;
       }else{
       arr[i].setFirstName(fName_);
@@ -61,11 +61,6 @@ int main(){
   cout << endl;
   writeData(output_, employees, size);
   cout << "Done..." << endl;
-
-  for(int i = 0; i < size; ++i){
-    cout << fixed << showpoint << setprecision(2);
-    cout << employees[i].fullName() << " " << employees[i].totalPay() << endl;
-  }
 
   return 0;
 }
