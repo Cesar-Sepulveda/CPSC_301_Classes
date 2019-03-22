@@ -1,3 +1,6 @@
+//Cesar Sepulveda
+//Section 2
+
 #include "person.cpp"
 #include <iostream>
 #include <string>
