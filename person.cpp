@@ -3,11 +3,11 @@
 
 using namespace std;
 
-Person::Person(){
-  payRate = 0.0;
-  hoursWorked = 0.0;
-  firstName = "No";
-  lastName = "employee";
+Person::Person(string firstName_, string lastName_, float payRate_, float hoursWorked_){
+  firstName = firstName_;
+  lastName = lastName_;
+  payRate = payRate_;
+  hoursWorked = hoursWorked_;
 }
 
 void Person::setFirstName(string fName){

@@ -12,7 +12,7 @@ private:
     float  payRate;
     float  hoursWorked;
 public:
-    Person();
+    Person(string firstName_, string lastName_, float payRate_, float hoursWorked_);
     void setLastName(string lName);
     string getLastName();
     void setFirstName(string fName);
